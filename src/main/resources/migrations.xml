@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="1" author="codahale">
+        <createTable tableName="people">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="firstName" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="lastName" type="varchar(255)"/>
+            <column name="email" type="varchar(255)"/>
+            <column name="dealParameter" type="varchar(255)"/>
+        </createTable>
+        
+         <createTable tableName="dealParamters">
+        	 <column name="id" type="bigint" >
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="compound" type="varchar(255)"/>
+            <column name="currency" type="varchar(255)"/>
+            <column name="dealOrCalculatedInterestinUSD" type="varchar(255)"/>
+            <column name="principal" type="varchar(255)"/>
+            <column name="rate" type="varchar(255)"/>
+            <column name="years" type="varchar(255)"/>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

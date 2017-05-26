@@ -1,0 +1,55 @@
+
+1) To build and run
+Build : mvn clean install
+Run : java -jar target\InterestDealsCalculatorforBankers-1.2.0-SNAPSHOT.jar server
+
+2) To return a list of all banking clients (bankers)
+
+http://localhost:8080/bankers
+
+Response received is 
+
+[{"id":1,"firstName":"Loke","lastName":"Guitar","email":"UK","dealParameters":{"principal":5000.0,"years":5.0,"rate":0.05,"compound":0.0,"currency":"EUR","dealOrCalculatedInterest":0.0,"dealOrCalculatedInterestinUSD":0.0}},{"id":2,"firstName":"John","lastName":"Gruber","email":"USA","dealParameters":{"principal":5000.0,"years":5.0,"rate":0.05,"compound":0.0,"currency":"EUR","dealOrCalculatedInterest":0.0,"dealOrCalculatedInterestinUSD":0.0}},{"id":3,"firstName":"Melcum","lastName":"Marshal","email":"AUS","dealParameters":{"principal":5000.0,"years":5.0,"rate":0.05,"compound":0.0,"currency":"EUR","dealOrCalculatedInterest":0.0,"dealOrCalculatedInterestinUSD":0.0}},{"id":4,"firstName":"John","lastName":"Gruber","email":"USA@gmail.com","dealParameters":{"principal":5000.0,"years":5.0,"rate":0.05,"compound":0.0,"currency":"EUR","dealOrCalculatedInterest":1381.4078125000015,"dealOrCalculatedInterestinUSD":1549.18}}]
+
+3) To retrieve a particular bankers
+http://localhost:8080/bankers/2
+
+{"id":2,"firstName":"John","lastName":"Gruber","email":"USA","dealParameters":{"principal":5000.0,"years":5.0,"rate":0.05,"compound":0.0,"currency":"EUR","dealOrCalculatedInterest":0.0,"dealOrCalculatedInterestinUSD":0.0}}
+
+4) To check the status of the application use the following command
+
+http://localhost:8080/status
+
+
+5) To create a new banker 
+http://localhost:8080/bankers
+Method: Post
+Headers: Content-Type application/json
+Basic Auth: user password
+Request Body: {"id":4,"firstName":"John","lastName":"Gruber","email":"USA@gmail.com","dealParameters":{"principal":5000.0,"years":5.0,"rate":0.05,"compound":0.0,"currency":"EUR"}}
+
+Response Received:
+
+Response - http://localhost:8080/bankers
+ 
+200 OK
+Headers 
+
+Response body 
+
+{
+    "id": 4,
+    "firstName": "John",
+    "lastName": "Gruber",
+    "email": "USA@gmail.com",
+    "dealParameters": {
+        "principal": 5000.0,
+        "years": 5.0,
+        "rate": 0.05,
+        "compound": 0.0,
+        "currency": "EUR",
+        "dealOrCalculatedInterest": 1381.4078125000015,
+        "dealOrCalculatedInterestinUSD": 1549.18
+    }
+}
+
